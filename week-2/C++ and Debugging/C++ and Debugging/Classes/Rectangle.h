@@ -15,6 +15,7 @@ class Rectangle :   public Shape
 public:
     
     Rectangle (float w, float h);
+    ~Rectangle();
     
     std::string getName() override;
     float getPerimeter() override;

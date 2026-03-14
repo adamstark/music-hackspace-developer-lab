@@ -6,82 +6,72 @@
 //
 
 #include <iostream>
+#include "Classes/Rectangle.h"
 
-void pointers()
+// STACK
+// - Predefined area with fixed size (usually about 2mb)
+// - Very fast to access
+// - Cleaned up as variables go out of scope
+
+// HEAP
+// - Can grow in size as program runs
+// - Slower to allocate
+// - We have to clean up after oursleves
+
+// This is the old-school what of doing things
+// where you have to remember actively to delete
+// the memory you allocate
+void badOutdatedMemoryAllocationOnTheHeap()
 {
-    int a = 3;
-    int b = 7;
+    // Hey can I have some space for a Rectangle in memory
+    Rectangle* r = new Rectangle (10, 20);
     
-    int* ptr = &b;
+    // use our rectangle
+    std::cout << r->getArea() << std::endl;
     
-    // Print out memory address of a
-    std::cout << &a << std::endl;
-    
-    // Print out pointer
-    std::cout << ptr << std::endl;
-    
-    // "De-reference" pointer and print out value of the location that the pointer points to
-    std::cout << *ptr << std::endl;
-    
-    // Print b before writing to dereferenced pointer
-    std::cout << b << std::endl;
-    
-    *ptr = 11;
-    
-    // Print b after writing to dereferenced pointer
-    std::cout << b << std::endl;
-    
-    // set a point to null
-    ptr = nullptr;
+    delete r; // cleans up the memory on the heap
+    r = nullptr;
 }
 
-void references()
+// Unique pointer cleans up after itself
+// Unique pointers cannot be copied
+void uniquePointerExample()
 {
-    int a = 3;
+    // define a unique pointer
+    std::unique_ptr<Rectangle> r = std::make_unique<Rectangle> (10, 20);
     
-    int& c = a; // 'ref' is an 'alias' for 'a'
-    
-    std::cout << a << std::endl;
-    
-    c = 2;
-    
-    std::cout << a << std::endl;
+    // use our rectangle
+    std::cout << r->getArea() << std::endl;
 }
 
 
-class Counter
+// any shared pointer passed into this function will
+// be copied, increasing the use count of the shared pointer
+// but at the end of the function that copy will be released
+void processRectangle (std::shared_ptr<Rectangle> r)
 {
-public:
-    
-    void increaseValue()
-    {
-        count += 1;
-    }
-    
-    int getCount()
-    {
-        return count;
-    }
-    
-private:
-    
-    int count {0};
-};
-
-void processCounter (Counter& c)
-{
-    c.increaseValue();
-    c.increaseValue();
-    c.increaseValue();
+    std::cout << r->getArea() << std::endl;
+    std::cout << r->getPerimeter() << std::endl;
 }
 
-int main(int argc, const char * argv[])
+// We can copy shared pointers
+// They can be passed into functions (where they are copied)
+// They are still tidied up automatically
+void sharedPointerExample()
 {
-    Counter c;
+    std::shared_ptr<Rectangle> r1 = std::make_shared<Rectangle> (10, 20);
+    std::shared_ptr<Rectangle> r2 = r1;
     
-    processCounter (c);
+    processRectangle (r2);
+}
+
+int main (int argc, const char * argv[])
+{
+    // Uncommend functions below to show example code running
     
-    std::cout << "COUNT IS: " << c.getCount() << std::endl;
+    //badOutdatedMemoryAllocationOnTheHeap();
+    //uniquePointerExample();
+    sharedPointerExample();
     
     return EXIT_SUCCESS;
 }

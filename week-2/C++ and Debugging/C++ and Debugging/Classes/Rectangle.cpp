@@ -7,11 +7,17 @@
 
 #include "Rectangle.h"
 #include <string>
+#include <iostream>
 
 Rectangle::Rectangle (float w, float h)
 {
     width = w;
     height = h;
+}
+
+Rectangle::~Rectangle()
+{
+    std::cout << "Rectangle was destroyed!" << std::endl;
 }
 
 std::string Rectangle::getName()
