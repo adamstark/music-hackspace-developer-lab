@@ -6,21 +6,21 @@
 //
 
 #include <iostream>
-#include "Classes/Student.h"
+#include "Classes/Triangle.h"
+#include "Classes/Rectangle.h"
+
+void printShape (Shape& s)
+{
+    std::cout << s.getName() << " has area of " << s.getArea() << std::endl;
+}
 
 int main(int argc, const char * argv[])
 {
-    Student s1 ("John", 1242);
-    Student s2 ("Jane", 8642);
+    Rectangle r (20, 50);
+    Triangle t (4, 5, 6);
     
-    s1.borrowBook ("Harry Potter");
-    s2.borrowBook ("Wuthering Heights");
-    
-    std::cout << "Student 1 is " << s1.getName() << " with student ID " << s1.getStudentID() << std::endl;
-    std::cout << "Student 2 is " << s2.getName() << " with student ID " << s2.getStudentID() << std::endl;
-    
-    std::cout << "Student 1 has borrowed: " << s1.getBook() << std::endl;
-    std::cout << "Student 2 has borrowed: " << s2.getBook() << std::endl;
+    printShape (r);
+    printShape (t);
     
     return EXIT_SUCCESS;
 }
