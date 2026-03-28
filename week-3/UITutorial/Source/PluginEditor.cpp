@@ -28,6 +28,25 @@ UITutorialAudioProcessorEditor::UITutorialAudioProcessorEditor (UITutorialAudioP
             DBG ("Button is Off");
     };
     
+    mySlider1.setRange (0., 100.);
+    mySlider1.setTextBoxStyle (Slider::TextEntryBoxPosition::TextBoxRight, true, 60, 20);
+    addAndMakeVisible (mySlider1);
+    mySlider1.onValueChange = [this]()
+    {
+        double value = mySlider1.getValue();
+        DBG ("Slider 1 value is " << value);
+    };
+    
+    mySlider2.setRange (0., 12.);
+    mySlider2.setTextBoxStyle (Slider::TextEntryBoxPosition::NoTextBox, true, 60, 20);
+    mySlider2.setSliderStyle (Slider::SliderStyle::Rotary);
+    addAndMakeVisible (mySlider2);
+    mySlider2.onValueChange = [this]()
+    {
+        double value = mySlider2.getValue();
+        DBG ("Slider 2 value is " << value);
+    };
+    
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
     setSize (400, 300);
@@ -56,4 +75,8 @@ void UITutorialAudioProcessorEditor::resized()
     r.reduce (20, 20);
     
     myButton.setBounds (r.removeFromTop (30).withWidth (100));
+    r.removeFromTop (20);
+    mySlider1.setBounds (r.removeFromTop (20));
+    r.removeFromTop (20);
+    mySlider2.setBounds (r.removeFromTop (80).withWidth (80));
 }
