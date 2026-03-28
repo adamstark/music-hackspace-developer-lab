@@ -25,12 +25,13 @@ UITutorialAudioProcessorEditor::~UITutorialAudioProcessorEditor()
 //==============================================================================
 void UITutorialAudioProcessorEditor::paint (juce::Graphics& g)
 {
-    // (Our component is opaque, so we must completely fill the background with a solid colour)
-    g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
-
-    g.setColour (Colours::white);
-    g.setFont (juce::FontOptions (15.0f));
-    g.drawFittedText ("Hello World!", getLocalBounds(), juce::Justification::centred, 1);
+    g.fillAll (Colours::grey);
+    
+    Rectangle<int> r (getLocalBounds());
+    r.reduce (10, 10);
+    
+    g.setColour (Colours::darkgrey);
+    g.fillRect (r);
 }
 
 void UITutorialAudioProcessorEditor::resized()
