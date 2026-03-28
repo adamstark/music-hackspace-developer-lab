@@ -10,6 +10,7 @@
 
 #include <JuceHeader.h>
 #include "PluginProcessor.h"
+#include "SliderAreaComponent.h"
 
 //==============================================================================
 /**
@@ -31,9 +32,8 @@ private:
     // access the processor object that created it.
     UITutorialAudioProcessor& audioProcessor;
     TextButton myButton;
-    Slider mySlider1;
-    Slider mySlider2;
     ComboBox myComboBox;
+    SliderAreaComponent sliderArea;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (UITutorialAudioProcessorEditor)
 };

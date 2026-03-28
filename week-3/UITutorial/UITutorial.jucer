@@ -4,6 +4,10 @@
               addUsingNamespaceToJuceHeader="1" jucerFormatVersion="1">
   <MAINGROUP id="G3Wbkl" name="UITutorial">
     <GROUP id="{9F9232AF-1920-5D27-C01C-7F3AECBEC9E5}" name="Source">
+      <FILE id="KnOx5l" name="SliderAreaComponent.cpp" compile="1" resource="0"
+            file="Source/SliderAreaComponent.cpp"/>
+      <FILE id="WRDEcX" name="SliderAreaComponent.h" compile="0" resource="0"
+            file="Source/SliderAreaComponent.h"/>
       <FILE id="VMtBzG" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="qzFqhS" name="PluginProcessor.h" compile="0" resource="0"
