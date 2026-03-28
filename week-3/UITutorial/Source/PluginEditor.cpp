@@ -13,6 +13,21 @@
 UITutorialAudioProcessorEditor::UITutorialAudioProcessorEditor (UITutorialAudioProcessor& p)
     : AudioProcessorEditor (&p), audioProcessor (p)
 {
+    myButton.setColour (TextButton::ColourIds::buttonColourId, Colours::red);
+    myButton.setColour (TextButton::ColourIds::buttonOnColourId, Colours::green);
+    myButton.setClickingTogglesState (true);
+    myButton.setButtonText ("Click Me");
+    addAndMakeVisible (myButton);
+    myButton.onClick = [this]()
+    {
+        bool state = myButton.getToggleState();
+        
+        if (state)
+            DBG ("Button is On");
+        else
+            DBG ("Button is Off");
+    };
+    
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
     setSize (400, 300);
@@ -20,6 +35,7 @@ UITutorialAudioProcessorEditor::UITutorialAudioProcessorEditor (UITutorialAudioP
 
 UITutorialAudioProcessorEditor::~UITutorialAudioProcessorEditor()
 {
+
 }
 
 //==============================================================================
@@ -36,6 +52,8 @@ void UITutorialAudioProcessorEditor::paint (juce::Graphics& g)
 
 void UITutorialAudioProcessorEditor::resized()
 {
-    // This is generally where you'll want to lay out the positions of any
-    // subcomponents in your editor..
+    Rectangle<int> r (getLocalBounds());
+    r.reduce (20, 20);
+    
+    myButton.setBounds (r.removeFromTop (30).withWidth (100));
 }
