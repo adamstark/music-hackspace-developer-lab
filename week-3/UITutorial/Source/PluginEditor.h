@@ -33,6 +33,7 @@ private:
     TextButton myButton;
     Slider mySlider1;
     Slider mySlider2;
+    ComboBox myComboBox;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (UITutorialAudioProcessorEditor)
 };

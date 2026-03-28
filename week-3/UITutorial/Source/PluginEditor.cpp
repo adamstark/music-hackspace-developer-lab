@@ -47,6 +47,17 @@ UITutorialAudioProcessorEditor::UITutorialAudioProcessorEditor (UITutorialAudioP
         DBG ("Slider 2 value is " << value);
     };
     
+    myComboBox.addItem ("Sine", 1);
+    myComboBox.addItem ("Sawtooth", 2);
+    myComboBox.addItem ("Square", 3);
+    myComboBox.addItem ("Noise", 4);
+    addAndMakeVisible (myComboBox);
+    myComboBox.onChange = [this]()
+    {
+        int selectedIndex = myComboBox.getSelectedItemIndex();
+        DBG ("We selected " << myComboBox.getItemText (selectedIndex));
+    };
+    
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
     setSize (400, 300);
@@ -79,4 +90,6 @@ void UITutorialAudioProcessorEditor::resized()
     mySlider1.setBounds (r.removeFromTop (20));
     r.removeFromTop (20);
     mySlider2.setBounds (r.removeFromTop (80).withWidth (80));
+    r.removeFromTop (20);
+    myComboBox.setBounds (r.removeFromTop (20).withWidth (100));
 }
