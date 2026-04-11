@@ -4,6 +4,8 @@
               addUsingNamespaceToJuceHeader="1" jucerFormatVersion="1">
   <MAINGROUP id="G1iRdi" name="DSPLearning">
     <GROUP id="{EB2F5938-A312-B45F-D441-719250AB7CB9}" name="Source">
+      <FILE id="ti62dE" name="Oscillator.cpp" compile="1" resource="0" file="Source/Oscillator.cpp"/>
+      <FILE id="WvjOWH" name="Oscillator.h" compile="0" resource="0" file="Source/Oscillator.h"/>
       <FILE id="oEruWZ" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="rqaA5y" name="PluginProcessor.h" compile="0" resource="0"

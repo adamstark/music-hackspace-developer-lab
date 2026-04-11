@@ -130,12 +130,14 @@ bool DSPLearningAudioProcessor::isBusesLayoutSupported (const BusesLayout& layou
 
 void DSPLearningAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
-    for (int i = 0; i < buffer.getNumSamples(); i++) // for each audio sample set (i.e. for a stereo signal there are 2, left and right)
+    for (int i = 0; i < buffer.getNumSamples(); i++)
     {
-        for (int ch = 0; ch < buffer.getNumChannels(); ch++) // for each channel
+        float oscillatorSample = osc.getNextSample();
+        oscillatorSample *= 0.1f; // DO THIS OTHERWISE IT WILL BE DANGEROUSLY LOUD
+        
+        for (int ch = 0; ch < buffer.getNumChannels(); ch++)
         {
-            float sample = buffer.getSample (ch, i);
-            buffer.setSample (ch, i, sample * gain);
+            buffer.setSample (ch, i, oscillatorSample * gain);
         }
     }
 }

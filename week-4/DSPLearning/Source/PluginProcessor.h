@@ -9,6 +9,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "Oscillator.h"
 
 //==============================================================================
 /**
@@ -58,6 +59,7 @@ public:
 private:
     
     float gain {1.f};
+    Oscillator osc;
     
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DSPLearningAudioProcessor)
