@@ -44,12 +44,24 @@ float Oscillator::renderSineWave()
     return std::sin (phase * MathConstants<float>::twoPi);
 }
 
-float Oscillator::renderSawtooth()
+float Oscillator::renderNaiveSawtooth()
 {
     return (phase * 2.f) - 1.f;
 }
 
-float Oscillator::renderSquareWave()
+float Oscillator::renderSawtooth()
+{
+    float sample = 0.f;
+    int maxHarmonics = static_cast<int> ((sampleRate / 2.f) / frequency);
+    
+    for (int n = 1; n < maxHarmonics; n++)
+        sample += std::sin (n * phase * MathConstants<float>::twoPi) / n;
+    
+    sample = sample * -2.f / MathConstants<float>::pi;
+    return sample;
+}
+
+float Oscillator::renderNaiveSquareWave()
 {
     float sineWave = renderSineWave();
     
@@ -57,6 +69,18 @@ float Oscillator::renderSquareWave()
         return 1.f;
     else
         return -1.f;
+}
+
+float Oscillator::renderSquareWave()
+{
+    float sample = 0.f;
+    int maxHarmonics = static_cast<int> ((sampleRate / 2.f) / frequency);
+    
+    for (int n = 1; n < maxHarmonics; n += 2)
+        sample += std::sin (n * phase * MathConstants<float>::twoPi) / n;
+    
+    sample = sample * 4.f / MathConstants<float>::pi;
+    return sample;
 }
 
 void Oscillator::calculatePhaseIncrement()

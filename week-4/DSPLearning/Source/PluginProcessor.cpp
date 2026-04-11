@@ -20,7 +20,7 @@ DSPLearningAudioProcessor::DSPLearningAudioProcessor()
                        .withOutput ("Output", juce::AudioChannelSet::stereo(), true)
                      #endif
                        ),
-    osc (Oscillator::WaveType::Square, 220)
+    osc (Oscillator::WaveType::Sawtooth, 220)
 #endif
 {
 }

@@ -32,7 +32,9 @@ public:
 private:
     
     float renderSineWave();
+    float renderNaiveSawtooth();
     float renderSawtooth();
+    float renderNaiveSquareWave();
     float renderSquareWave();
     
     void advancePhase();
