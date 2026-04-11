@@ -94,7 +94,7 @@ void DSPLearningAudioProcessor::changeProgramName (int index, const juce::String
 //==============================================================================
 void DSPLearningAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
-
+    osc.prepareToPlay (sampleRate);
 }
 
 void DSPLearningAudioProcessor::releaseResources()
