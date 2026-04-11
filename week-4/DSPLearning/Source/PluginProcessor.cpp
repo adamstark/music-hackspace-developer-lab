@@ -19,7 +19,8 @@ DSPLearningAudioProcessor::DSPLearningAudioProcessor()
                       #endif
                        .withOutput ("Output", juce::AudioChannelSet::stereo(), true)
                      #endif
-                       )
+                       ),
+    osc (Oscillator::WaveType::Square, 220)
 #endif
 {
 }
