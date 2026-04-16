@@ -29,6 +29,8 @@ public:
     
     float getNextSample();
     
+    void setFrequency (float frequency);
+    
 private:
     
     float renderSineWave();

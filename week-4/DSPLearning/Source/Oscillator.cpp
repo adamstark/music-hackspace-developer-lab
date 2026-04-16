@@ -95,3 +95,9 @@ void Oscillator::advancePhase()
     if (phase >= 1.f)
         phase = phase - 1.f;
 }
+
+void Oscillator::setFrequency (float f)
+{
+    frequency = f;
+    calculatePhaseIncrement();
+}

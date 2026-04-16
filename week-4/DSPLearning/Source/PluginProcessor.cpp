@@ -151,11 +151,22 @@ void DSPLearningAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, 
     for (auto m : midiMessages)
     {
         auto message = m.getMessage();
-        
+                        
         if (message.isNoteOn())
+        {
+            // calculate note frequency
+            float frequency = MidiMessage::getMidiNoteInHertz (message.getNoteNumber());
+            
+            // set oscillator frequency
+            osc.setFrequency (frequency);
+            
+            // trigger a note
             adsr.noteOn();
+        }
         else if (message.isNoteOff())
+        {
             adsr.noteOff();
+        }
     }
     
     for (int i = 0; i < buffer.getNumSamples(); i++)
