@@ -23,6 +23,13 @@ DSPLearningAudioProcessor::DSPLearningAudioProcessor()
     osc (Oscillator::WaveType::Sawtooth, 220)
 #endif
 {
+    ADSR::Parameters params;
+    params.attack = 0.05f;
+    params.decay = 0.2f;
+    params.sustain = 0.5f;
+    params.release = 1.f;
+    
+    adsr.setParameters (params);
 }
 
 DSPLearningAudioProcessor::~DSPLearningAudioProcessor()
@@ -95,6 +102,7 @@ void DSPLearningAudioProcessor::changeProgramName (int index, const juce::String
 void DSPLearningAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
     osc.prepareToPlay (sampleRate);
+    adsr.setSampleRate (sampleRate);
 }
 
 void DSPLearningAudioProcessor::releaseResources()
@@ -135,6 +143,9 @@ void DSPLearningAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, 
     {
         float oscillatorSample = osc.getNextSample();
         oscillatorSample *= 0.1f; // DO THIS OTHERWISE IT WILL BE DANGEROUSLY LOUD
+        
+        float envelope = adsr.getNextSample();
+        oscillatorSample *= envelope;
         
         for (int ch = 0; ch < buffer.getNumChannels(); ch++)
         {

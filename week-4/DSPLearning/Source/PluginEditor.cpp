@@ -22,6 +22,22 @@ DSPLearningAudioProcessorEditor::DSPLearningAudioProcessorEditor (DSPLearningAud
         audioProcessor.setLevelInDecibels (dB);
     };
     
+    noteButton.setClickingTogglesState (true);
+    addAndMakeVisible (noteButton);
+    noteButton.onClick = [this]()
+    {
+        bool state = noteButton.getToggleState();
+        
+        if (state)
+        {
+            audioProcessor.getADSR().noteOn();
+        }
+        else
+        {
+            audioProcessor.getADSR().noteOff();
+        }
+    };
+    
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
     setSize (400, 300);
@@ -44,4 +60,6 @@ void DSPLearningAudioProcessorEditor::resized()
     r.reduce (20, 20);
     
     gainSlider.setBounds (r.removeFromTop (30));
+    r.removeFromTop (20);
+    noteButton.setBounds (r.removeFromTop (20).removeFromLeft (100));
 }

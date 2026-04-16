@@ -56,10 +56,17 @@ public:
     
     void setLevelInDecibels (float dB);
 
+    // returns reference - not great because we are exposing a private member of our class
+    ADSR& getADSR()
+    {
+        return adsr;
+    }
+    
 private:
     
     float gain {1.f};
     Oscillator osc;
+    ADSR adsr;
     
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DSPLearningAudioProcessor)
