@@ -148,6 +148,16 @@ bool DSPLearningAudioProcessor::isBusesLayoutSupported (const BusesLayout& layou
 
 void DSPLearningAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
+    for (auto m : midiMessages)
+    {
+        auto message = m.getMessage();
+        
+        if (message.isNoteOn())
+            adsr.noteOn();
+        else if (message.isNoteOff())
+            adsr.noteOff();
+    }
+    
     for (int i = 0; i < buffer.getNumSamples(); i++)
     {
         float oscillatorSample = osc.getNextSample();
