@@ -110,7 +110,7 @@ void DSPLearningAudioProcessor::prepareToPlay (double newSampleRate, int samples
 
 void DSPLearningAudioProcessor::setFilterCutoff (float frequency)
 {
-    IIRCoefficients coefficients = IIRCoefficients::makeBandPass (sampleRate, frequency);
+    IIRCoefficients coefficients = IIRCoefficients::makeLowPass (sampleRate, frequency);
     filter.setCoefficients (coefficients);
 }
 
