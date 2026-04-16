@@ -99,10 +99,19 @@ void DSPLearningAudioProcessor::changeProgramName (int index, const juce::String
 }
 
 //==============================================================================
-void DSPLearningAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
+void DSPLearningAudioProcessor::prepareToPlay (double newSampleRate, int samplesPerBlock)
 {
+    sampleRate = newSampleRate;
     osc.prepareToPlay (sampleRate);
     adsr.setSampleRate (sampleRate);
+    
+    setFilterCutoff (20000.f);
+}
+
+void DSPLearningAudioProcessor::setFilterCutoff (float frequency)
+{
+    IIRCoefficients coefficients = IIRCoefficients::makeBandPass (sampleRate, frequency);
+    filter.setCoefficients (coefficients);
 }
 
 void DSPLearningAudioProcessor::releaseResources()
@@ -146,6 +155,8 @@ void DSPLearningAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, 
         
         float envelope = adsr.getNextSample();
         oscillatorSample *= envelope;
+        
+        oscillatorSample = filter.processSingleSampleRaw (oscillatorSample);
         
         for (int ch = 0; ch < buffer.getNumChannels(); ch++)
         {

@@ -55,6 +55,7 @@ public:
     void setStateInformation (const void* data, int sizeInBytes) override;
     
     void setLevelInDecibels (float dB);
+    void setFilterCutoff (float frequency);
 
     // returns reference - not great because we are exposing a private member of our class
     ADSR& getADSR()
@@ -64,9 +65,12 @@ public:
     
 private:
     
+    float sampleRate {44100.f};
     float gain {1.f};
     Oscillator osc;
     ADSR adsr;
+    IIRFilter filter;
+    
     
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DSPLearningAudioProcessor)

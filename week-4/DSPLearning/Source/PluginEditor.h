@@ -29,6 +29,7 @@ private:
     // access the processor object that created it.
     DSPLearningAudioProcessor& audioProcessor;
     Slider gainSlider;
+    Slider filterCutoffSlider;
     TextButton noteButton;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DSPLearningAudioProcessorEditor)

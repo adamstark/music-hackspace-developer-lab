@@ -22,6 +22,15 @@ DSPLearningAudioProcessorEditor::DSPLearningAudioProcessorEditor (DSPLearningAud
         audioProcessor.setLevelInDecibels (dB);
     };
     
+    filterCutoffSlider.setRange (0., 20000.);
+    filterCutoffSlider.setValue (20000.);
+    addAndMakeVisible (filterCutoffSlider);
+    filterCutoffSlider.onValueChange = [this]()
+    {
+        float freq = filterCutoffSlider.getValue();
+        audioProcessor.setFilterCutoff (freq);
+    };
+    
     noteButton.setClickingTogglesState (true);
     addAndMakeVisible (noteButton);
     noteButton.onClick = [this]()
@@ -60,6 +69,8 @@ void DSPLearningAudioProcessorEditor::resized()
     r.reduce (20, 20);
     
     gainSlider.setBounds (r.removeFromTop (30));
+    r.removeFromTop (20);
+    filterCutoffSlider.setBounds (r.removeFromTop (30));
     r.removeFromTop (20);
     noteButton.setBounds (r.removeFromTop (20).removeFromLeft (100));
 }
