@@ -18,6 +18,7 @@ Each week contains any relevant work from that week for review.
 - Real-time 101 - Fabian Renn-Giles & Dave Rowland
   - [Real-time 101 - part I: Investigating the real-time problem space](https://www.youtube.com/watch?v=Q0vrQFyAdWI)
   - [Real-time 101 - Part II: The real-time audio developer’s toolbox](https://www.youtube.com/watch?v=PoZAo2Vikbo)
+  - Two excellent videos covering many of the scenarios you can encounter in audio development and how to deal with them. The talks can be quite dense sometimes and you might need to revist them but there is a lot of good knowledge here.
 
 ## License
 
