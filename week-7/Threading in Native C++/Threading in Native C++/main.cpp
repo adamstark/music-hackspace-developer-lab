@@ -7,27 +7,15 @@
 
 #include <iostream>
 #include <thread>
+#include <atomic>
+#include <string>
 
-// WHAT WE WANT TO HAPPEN
-// thread 1: reads counter (0)
-// thread 1: adds 1 (0 -> 1)
-// thread 1: write result of calculation to counter (1)
+// ATOMIC VARIABLES SOLVE PROBLEM (FOR SIMPLE DATA)
+// Atomic instruction is a single action
 
-// thread 2: reads counter (1)
-// thread 2: subtracts 1 (1 -> 0)
-// thread 2: write result of calculation to counter (0)
+std::atomic<int> counter = 0;
+static_assert (std::atomic<int>::is_always_lock_free);
 
-// WHAT ACTUALLY HAPPENS
-// thread 1: reads counter (0)
-// thread 2: reads counter (0)
-
-// thread 1: adds 1 (0 -> 1)
-// thread 2: subtracts 1 (0 -> -1)
-
-// thread 1: writes to counter (1)
-// thread 2: writes to counter (-1)
-
-int counter = 0;
 
 void task1()
 {
