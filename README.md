@@ -8,8 +8,16 @@ Each week contains any relevant work from that week for review.
 
 ### Videos
 
+#### DSP
+
 - [Akash Murthy - Digital Filter Basics](https://www.youtube.com/watch?v=Qmd685msY-Y&list=PLbqhA-NKGP6Afr_KbPUuy_yIBpPR4jzWo)
   - An excellent video series giving an introduction to digital filters with great intuition and animations
+
+#### Threading
+
+- Real-time 101 - Fabian Renn-Giles & Dave Rowland
+  - [Real-time 101 - part I: Investigating the real-time problem space](https://www.youtube.com/watch?v=Q0vrQFyAdWI)
+  - [Real-time 101 - Part II: The real-time audio developer’s toolbox](https://www.youtube.com/watch?v=PoZAo2Vikbo)
 
 ## License
 
