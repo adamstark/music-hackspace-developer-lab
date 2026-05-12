@@ -8,25 +8,33 @@
 #include <iostream>
 #include <thread>
 #include <atomic>
-#include <string>
+#include <mutex>
 
-// ATOMIC VARIABLES SOLVE PROBLEM (FOR SIMPLE DATA)
-// Atomic instruction is a single action
+// LOCKS ENSURE THE ORDER OF ACTIONS TO SYNCHRONISE THREADS
+// 1. Never lock the audio thread
+// 2. Never lock the audio thread
+// 3. Never lock the audio thread
 
-std::atomic<int> counter = 0;
-static_assert (std::atomic<int>::is_always_lock_free);
-
+// pretend this is complex data
+int counter = 0;
+std::mutex m;
 
 void task1()
 {
     for (int i = 0; i < 10000; i++)
+    {
+        std::lock_guard<std::mutex> lock (m);   // Scoped Lock
         counter++;
+    }
 }
 
 void task2()
 {
     for (int i = 0; i < 10000; i++)
+    {
+        std::lock_guard<std::mutex> lock (m);
         counter--;
+    }
 }
 
 int main(int argc, const char * argv[])
