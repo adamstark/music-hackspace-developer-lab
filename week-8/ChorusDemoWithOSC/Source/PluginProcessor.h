@@ -9,6 +9,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "OSCProcessor.h"
 
 //==============================================================================
 /**
@@ -65,6 +66,11 @@ public:
     {
         return state;
     }
+    
+    OSCProcessor& getOSCProcessor()
+    {
+        return oscProcessor;
+    }
 
 private:
     
@@ -74,6 +80,7 @@ private:
     
     dsp::Chorus<float> chorus;
     AudioProcessorValueTreeState state;
+    OSCProcessor oscProcessor;
     
     
     //==============================================================================

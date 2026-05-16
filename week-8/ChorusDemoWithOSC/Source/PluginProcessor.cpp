@@ -23,7 +23,8 @@ ChorusDemoAudioProcessor::ChorusDemoAudioProcessor()
                        .withOutput ("Output", juce::AudioChannelSet::stereo(), true)
                      #endif
                        ),
-    state (*this, nullptr, "CHORUS", createParameterLayout())
+    state (*this, nullptr, "CHORUS", createParameterLayout()),
+    oscProcessor (state)
 #endif
 {
     state.addParameterListener (Ids::rate, this);

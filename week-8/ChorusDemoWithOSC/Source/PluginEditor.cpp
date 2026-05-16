@@ -18,6 +18,11 @@ ChorusDemoAudioProcessorEditor::ChorusDemoAudioProcessorEditor (ChorusDemoAudioP
     rateSlider.setSliderStyle (Slider::SliderStyle::Rotary);
     rateSlider.setTextBoxStyle (Slider::TextEntryBoxPosition::TextBoxBelow, false, 60, 20);
     addAndMakeVisible (rateSlider);
+    rateSlider.onValueChange = [this]()
+    {
+        float value = rateSlider.getValue();
+        audioProcessor.getOSCProcessor().updateRate (value);
+    };
     
     rateLabel.setJustificationType (Justification::centred);
     rateLabel.setText (p.getState().getParameter (ChorusDemoAudioProcessor::Ids::rate)->name, dontSendNotification);
@@ -26,6 +31,11 @@ ChorusDemoAudioProcessorEditor::ChorusDemoAudioProcessorEditor (ChorusDemoAudioP
     depthSlider.setSliderStyle (Slider::SliderStyle::Rotary);
     depthSlider.setTextBoxStyle (Slider::TextEntryBoxPosition::TextBoxBelow, false, 60, 20);
     addAndMakeVisible (depthSlider);
+    depthSlider.onValueChange = [this]()
+    {
+        float value = depthSlider.getValue();
+        audioProcessor.getOSCProcessor().updateDepth (value);
+    };
     
     depthLabel.setJustificationType (Justification::centred);
     depthLabel.setText (p.getState().getParameter (ChorusDemoAudioProcessor::Ids::depth)->name, dontSendNotification);

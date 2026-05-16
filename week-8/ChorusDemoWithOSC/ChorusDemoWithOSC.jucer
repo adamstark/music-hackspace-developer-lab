@@ -4,6 +4,9 @@
               useAppConfig="0" addUsingNamespaceToJuceHeader="1" jucerFormatVersion="1">
   <MAINGROUP id="Rx2Y4g" name="ChorusDemoWithOSC">
     <GROUP id="{48DF8F7B-9F9C-DA0D-F2EA-C11C67DFB6B3}" name="Source">
+      <FILE id="A7r7L8" name="OSCProcessor.cpp" compile="1" resource="0"
+            file="Source/OSCProcessor.cpp"/>
+      <FILE id="ieQqs1" name="OSCProcessor.h" compile="0" resource="0" file="Source/OSCProcessor.h"/>
       <FILE id="H6Yyk0" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="N0reCc" name="PluginProcessor.h" compile="0" resource="0"
@@ -30,6 +33,7 @@
     <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_osc" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
   </MODULES>
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
   <EXPORTFORMATS>
@@ -53,6 +57,7 @@
         <MODULEPATH id="juce_gui_basics" path="../../../../SDKs/JUCE/modules"/>
         <MODULEPATH id="juce_gui_extra" path="../../../../SDKs/JUCE/modules"/>
         <MODULEPATH id="juce_dsp" path="../../../../SDKs/JUCE/modules"/>
+        <MODULEPATH id="juce_osc" path="../../../../SDKs/JUCE/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
   </EXPORTFORMATS>
