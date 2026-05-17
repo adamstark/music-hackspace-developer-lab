@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="ddTwsK" name="LookAndFeelDemo" projectType="audioplug" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="1" jucerFormatVersion="1">
+  <MAINGROUP id="Ti1t2k" name="LookAndFeelDemo">
+    <GROUP id="{E90858A7-B275-CACA-D09C-0FE52CD078ED}" name="Source">
+      <GROUP id="{FC1B5389-A84A-9211-7758-9944AB851D28}" name="LookAndFeel">
+        <FILE id="UnnfJv" name="CustomLookAndFeel.cpp" compile="1" resource="0"
+              file="Source/LookAndFeel/CustomLookAndFeel.cpp"/>
+        <FILE id="vQZkmF" name="CustomLookAndFeel.h" compile="0" resource="0"
+              file="Source/LookAndFeel/CustomLookAndFeel.h"/>
+        <FILE id="nDKC8K" name="Icons.h" compile="0" resource="0" file="Source/LookAndFeel/Icons.h"/>
+      </GROUP>
+      <GROUP id="{D773DA24-547B-D1D8-6037-AE064FC1475D}" name="UI">
+        <FILE id="kfWmjW" name="InstrumentOptionComponent.cpp" compile="1"
+              resource="0" file="Source/UI/InstrumentOptionComponent.cpp"/>
+        <FILE id="zXJP1M" name="InstrumentOptionComponent.h" compile="0" resource="0"
+              file="Source/UI/InstrumentOptionComponent.h"/>
+      </GROUP>
+      <FILE id="Z5l0iz" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="LJGYTE" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="FHsTQ7" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="JcASJW" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+    </GROUP>
+    <GROUP id="{A57043DB-56DB-302B-A6B9-00EAA707B68B}" name="Fonts">
+      <FILE id="QxhS6g" name="Roboto-Black.ttf" compile="0" resource="1"
+            file="Fonts/Roboto-Black.ttf"/>
+      <FILE id="Leq3ss" name="Roboto-BlackItalic.ttf" compile="0" resource="1"
+            file="Fonts/Roboto-BlackItalic.ttf"/>
+      <FILE id="ZWQ9Xn" name="Roboto-Bold.ttf" compile="0" resource="1" file="Fonts/Roboto-Bold.ttf"/>
+      <FILE id="TOdxCl" name="Roboto-BoldItalic.ttf" compile="0" resource="1"
+            file="Fonts/Roboto-BoldItalic.ttf"/>
+      <FILE id="AFdKpo" name="Roboto-ExtraBold.ttf" compile="0" resource="1"
+            file="Fonts/Roboto-ExtraBold.ttf"/>
+      <FILE id="gPcHna" name="Roboto-ExtraBoldItalic.ttf" compile="0" resource="1"
+            file="Fonts/Roboto-ExtraBoldItalic.ttf"/>
+      <FILE id="UgnoGF" name="Roboto-ExtraLight.ttf" compile="0" resource="1"
+            file="Fonts/Roboto-ExtraLight.ttf"/>
+      <FILE id="Yi9sAa" name="Roboto-ExtraLightItalic.ttf" compile="0" resource="1"
+            file="Fonts/Roboto-ExtraLightItalic.ttf"/>
+      <FILE id="w12Vuf" name="Roboto-Italic.ttf" compile="0" resource="1"
+            file="Fonts/Roboto-Italic.ttf"/>
+      <FILE id="lSus1N" name="Roboto-Light.ttf" compile="0" resource="1"
+            file="Fonts/Roboto-Light.ttf"/>
+      <FILE id="bqupUr" name="Roboto-LightItalic.ttf" compile="0" resource="1"
+            file="Fonts/Roboto-LightItalic.ttf"/>
+      <FILE id="U2x0ao" name="Roboto-Medium.ttf" compile="0" resource="1"
+            file="Fonts/Roboto-Medium.ttf"/>
+      <FILE id="nhWUSE" name="Roboto-MediumItalic.ttf" compile="0" resource="1"
+            file="Fonts/Roboto-MediumItalic.ttf"/>
+      <FILE id="zarS1z" name="Roboto-Regular.ttf" compile="0" resource="1"
+            file="Fonts/Roboto-Regular.ttf"/>
+      <FILE id="k6ufwb" name="Roboto-SemiBold.ttf" compile="0" resource="1"
+            file="Fonts/Roboto-SemiBold.ttf"/>
+      <FILE id="uyBP9u" name="Roboto-SemiBoldItalic.ttf" compile="0" resource="1"
+            file="Fonts/Roboto-SemiBoldItalic.ttf"/>
+      <FILE id="vFJJWk" name="Roboto-Thin.ttf" compile="0" resource="1" file="Fonts/Roboto-Thin.ttf"/>
+      <FILE id="LfC3Qq" name="Roboto-ThinItalic.ttf" compile="0" resource="1"
+            file="Fonts/Roboto-ThinItalic.ttf"/>
+    </GROUP>
+  </MAINGROUP>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors_headless" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="LookAndFeelDemo"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="LookAndFeelDemo"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../../../SDKs/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../../../SDKs/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../../../SDKs/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../../../SDKs/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../../../SDKs/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors_headless" path="../../../../SDKs/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../../../SDKs/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../../../../SDKs/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../../SDKs/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../../../SDKs/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../../../SDKs/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../../../SDKs/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../../../SDKs/JUCE/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+</JUCERPROJECT>
