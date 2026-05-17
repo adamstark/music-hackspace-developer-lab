@@ -25,3 +25,7 @@ Each week contains any relevant work from that week for review.
 The source code in this repository is licensed under the MIT License.
 
 However, the project name, logo, and branding of Music Hackspace are the property of Music Hackspace Ltd, may not be used without permission and are not included in the open-source license. All rights reserved.
+
+The Roboto font used in examples in this project is Copyright 2011 The Roboto Project Authors and is distributed under the licence detailed on its webpage:
+
+[https://fonts.google.com/specimen/Roboto/license](https://fonts.google.com/specimen/Roboto/license)
